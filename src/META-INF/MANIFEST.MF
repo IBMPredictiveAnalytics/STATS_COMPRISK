@@ -1,0 +1,18 @@
+Name: STATS COMPRISK
+Dialog-Specs: STATS_COMPRISK.spd
+Command-Specs: STATS_COMPRISK.xml
+Code-Files: STATS_COMPRISK.R
+Misc-Files: extsyntax.css,markdown.html,IBMdialogicon.png
+Summary: Competing risk survival regression
+Description: This procedure estimates the   competing risks survival r
+ egression model.  This model allows for multiple   competing causes f
+ or the failure event.  These could, for example, be multiple   health
+  conditions or multiple part failures in a mechanical or electrical d
+ evice.
+Author: JKP, IBM SPSS
+Version: 1.0.0
+Product-Version: 18
+Date: 5/6/2015
+Categories: statistics, survival
+Plugins: R
+R-Packages: cmprsk

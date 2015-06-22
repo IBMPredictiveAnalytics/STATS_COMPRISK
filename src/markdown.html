@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>STATS COMPRISK Extension command</title>
+
+<link rel="stylesheet" type="text/css" href="extsyntax.css" />
+
+</head>
+
+<body>
+<h1>STATS COMPRISK Extension command</h1>
+
+<p>Calculate competing risks survival regression model</p>
+<div class="syntax">
+<p>STATS COMPRISK<br/> 
+	FAILTIME<sup>&#42;</sup> = <em>time variable name</em><br/>
+    FAILSTATUS<sup>&#42;</sup> = <em>failure or censoring variable name</em><br/>
+    FIXEDCOVAR = <em>fixed covariates</em><br/>
+    TIMECOVAR = <em>time-varying covariates</em><br/>
+	TIMEFUNC = QUAD or THRESHOLD<br/>
+	THRESHOLD = <em>time value</em><br/>
+    STRATA = <em>strata variable</em><br/>
+	FAILCODE<sup>&#42;</sup> = <em>failure code of interest</em><br/>
+    CENSORCODE<sup>&#42;</sup> = <em>code indicating censoring</em></p>
+
+<p>/OPTIONS<br/> 
+    MISSING = OMIT<sup>&#42;&#42;</sup> or FAIL<br/>
+    PLOT = YES<sup>&#42;&#42;</sup> or NO<br/>
+	QUANTILES = <em>list of quantiles for plot</em><br/>
+    MAXITER = <em>maximum number of iterations</em> </br>
+	TOL = <em>convergence tolerance</em></p>
+
+<p>/SAVE <br/>
+DATASET = <em>dataset</em><br/>
+</p>
+
+
+<p><sup>&#42;</sup> Required<br/>
+<sup>&#42;&#42;</sup> Default.</p>
+</div>
+<p>STATS COMPRISK /HELP.  prints this information and does nothing else.</p>
+
+<pre class="example"><code>
+STATS COMPRISK FAILTIME=ftime FAILSTATUS=fstatus FIXEDCOVAR=x1 x2 TIMECOVAR=x3
+TIMEFUNC=THRESHOLD THRESHOLD=.4 FAILCODE=1 CENSORCODE=0
+/OPTIONS MISSING=OMIT PLOT=YES QUANTILES=.25 .50 .75 MAXITER=10 TOL=.000001
+/SAVE DATASET=resids.
+</code></pre>
+
+<p>This procedure does not honor weights or split files.</p>
+
+<p><strong>FAILTIME</strong> specifies the failure time.</p>
+
+<p><strong>FAILSTATUS</strong> specifies the failure cause or censoring code.</p>
+
+
+
+<p><strong>FIXEDCOVAR</strong>  specifies the fixed covariates </p>
+<p><strong>TIMECOVAR</strong>  specifies the time-varying covariates </p>
+<p>There must be at least one covariate.  If there are any
+time covariates, the time function must be specified.  Variables with a categorical
+measurement level are converted to factors and entered as a set of dummy variables.</p>
+<p><strong>TIMEFUNC</strong> This is only used with time covariates, where it is required.
+<strong>QUAD</strong> specifies a quadratic time function, and <strong>THRESHOLD</strong>
+specifies a threshold time function that has value zero up to the specified threshold and
+value one beyond that.  The time-varying covariates are multiplied by the time
+function and entered in the model.</p>
+
+<p><strong>THRESHOLD</strong> specifies the time threshold for the THRESHOLD function.</p>
+
+<p><strong>STRATA</strong> optionally specifies a stratification variable. 
+The censoring distribution will be estimated
+separately for each stratum in the course of the calculations, which is
+necessary if the censoring distributions differ,
+but only one set of coefficients is produced.
+By default, all cases are assumed to be the same group.</p>
+
+<p><strong>FAILCODE</strong> specifies which failure cause code is of interest.
+If the failure type of interest does not occur in the data,
+estimation will fail, and exact singularity will be reported.</p>
+
+<p><strong>CENSORCODE</strong> specifies the value that indicates that
+the case was censored.</p>
+
+<h2>OPTIONS</h2>
+
+<p><strong>MISSING</strong> indicates the missing value treatment.  Cases with user missing
+    values can be excluded (OMIT), or
+    the procedure can be stopped (FAIL) if any user missing are encountered.
+    System missing values always cause the case to be omitted.
+</p>
+<p><strong>PLOT</strong> indicates whether to plot the survival function.
+<strong>QUANTILES</strong> indicates the quantiles of each
+variable to calculate. A curve is drawn for each set of quantile
+values.  By default, the .25, .50, and .75 quantiles are used.
+</p>
+
+<p><strong>MAXITER</strong> and <strong>TOL</strong> specifications control the maximum
+number of iterations and the convergence criterion.  Results may be displayed even
+if convergence is not achieved.  The Summary table indicates the convergence
+status.</p>
+
+<h2>SAVE</h2>
+
+<p><strong>DATASET</strong> specifies a name for a dataset of residuals.  Each column
+lists the contribution to the score for each unique failure time.
+By default residuals are not saved.</p>
+
+
+<p>&copy; Copyright IBM Corp. 1989, 2015</p>
+
+</body>
+</html>
+

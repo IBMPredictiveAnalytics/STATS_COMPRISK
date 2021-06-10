@@ -10,16 +10,17 @@
 # ************************************************************************/
 
 # author__ = "IBM SPSS, JKP"
-# version__ = "1.0.0"
+# version__ = "1.1.0"
 
 # History
 # 06-may-2015 Original Version
+# 30-may-2021 Add coefficient CIs to output
 
 ### MAIN ROUTINE ###
 docomprisk = function(ftime, fstatus, cov1=NULL, cov2=NULL, tf="quad", 
     threshold=NULL, cengroup=NULL, failcode, cencode,
     maxiter=10, gtol=1e-06, missing="omit",
-    dataset=NULL, plotit=TRUE,
+    dataset=NULL, plotit=TRUE, ci=.95,
     quantiles = c(.25, .50, .75)) {
     # Estimate competing risk model
 
@@ -55,12 +56,20 @@ docomprisk = function(ftime, fstatus, cov1=NULL, cov2=NULL, tf="quad",
     }
     
     alldata = c(ftime, fstatus, cov1, cov2, cengroup)
-    
+    nacode = ifelse(missing == "omit", na.omit, na.fail)
     allargs = as.list(environment())
     dta = tryCatch(spssdata.GetDataFromSPSS(alldata, missingValueToNA=TRUE,
         factorMode="levels"),
         error=function(e) {warns$warn(e$message, dostop=TRUE)}
         )
+    ncases = nrow(dta)
+    dta = dta[complete.cases(dta),]
+    nmissing = ncases - nrow(dta)
+    if (nmissing > 0 && identical(nacode, na.fail)) {
+        warns$warn(gtxtf("Stopping: there are %d missing cases and Stop was specified", nmissing),
+            dostop=TRUE)
+    }
+    allargs['nmissing'] = nmissing
     if (!is.null(cov1)) {
         cov1dta = data.frame(dta[,3:(2 + length(cov1))])
         names(cov1dta) = names(dta)[3:(2 + length(cov1))]
@@ -93,7 +102,7 @@ docomprisk = function(ftime, fstatus, cov1=NULL, cov2=NULL, tf="quad",
         cov2dta = NULL
     }
 
-    nacode = ifelse(missing == "omit", na.omit, na.fail)
+
 
     args = list(ftime=dta[ftime], fstatus=dta[fstatus], failcode=failcode,
         cencode=cencode, na.action=nacode, gtol=gtol, maxiter=maxiter)
@@ -196,7 +205,7 @@ displayresults = function(allargs, res, pred, evalpts, warns) {
     # display results
     # allargs is the parameter set (estimation or prediction)
     
-    ressum = summary(res)
+    ressum = summary(res, conf.int=allargs$ci)
     tflabels = list(quad=gtxt("Quadratic"), threshold=gtxt("Threshold: %s"))
     if (!is.null(allargs$tf)) {
         tflabel = tflabels[[allargs$tf]]
@@ -237,8 +246,8 @@ displayresults = function(allargs, res, pred, evalpts, warns) {
             ifelse(allargs$missing == "omit", gtxt("omit"), gtxt("Stop")),
             ifelse(res$converged, gtxt("Yes"), gtxt("NO")),
             allargs$maxiter,
-            ressum$n - ressum$n.missing,
-            ressum$n.missing,
+            ressum$n,
+            allargs$nmissing,
             round(res$loglik, 5),
             round(ressum$logtest[[1]], 5),
             ressum$logtest[[2]],
@@ -249,11 +258,13 @@ displayresults = function(allargs, res, pred, evalpts, warns) {
         collabels=c(gtxt("Summary")), templateName="COMPRESKSUMMARY", outline=gtxt("Summary"),
         caption = gtxt("Computations done by R package cmprsk by Bob Gray")
     )
-    
-    sumres = summary(res)
-    coef = data.frame(sumres$coef)
+    ci = ressum$conf.int[,c(3,4)]
+    coef = data.frame(ressum$coef, ci)
+    frac = (1. - allargs$ci)/2.
+    lowerci = sprintf("Exp %.3f CI", frac)
+    upperci = sprintf("Exp %.3f CI", allargs$ci + frac)
     names(coef) = c(
-        gtxt("Coefficient"), gtxt("Exp"), gtxt("Std. Error"), gtxt("Z"), gtxt("Sig."))
+        gtxt("Coefficient"), gtxt("Exp"), gtxt("Std. Error"), gtxt("Z"), gtxt("Sig."), lowerci, upperci)
     spsspivottable.Display(coef,
         title=gtxt("Coefficients"),
         rowdim=gtxt("Variable"), hiderowdimtitle=FALSE,
@@ -428,6 +439,8 @@ Run = function(args) {
         spsspkg.Template("FAILCODE", subc="", ktype="str", var="failcode"),
         spsspkg.Template("CENSORCODE", subc="", ktype="str", var="cencode"),
         
+        spsspkg.Template("CONFINT", subc="OPTIONS", ktype="float", var="ci",
+                vallist=list(.5, .999)),
         spsspkg.Template("MAXITER", subc="OPTIONS", ktype="int", var="maxiter"),
         spsspkg.Template("TOL", subc="OPTIONS", ktype="float", var="gtol",
             vallist=list(1e-10)),

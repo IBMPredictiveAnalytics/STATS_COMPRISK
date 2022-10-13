@@ -1,4 +1,5 @@
 Name: STATS COMPRISK
+Display-Name: Competing Risks Survival Regression
 Dialog-Specs: STATS_COMPRISK.spd
 Command-Specs: STATS_COMPRISK.xml
 Code-Files: STATS_COMPRISK.R
@@ -17,3 +18,4 @@ Product-Version-Maximum: 99
 Categories: statistics, survival
 Plugins: R
 R-Packages: cmprsk
+Translation-Catalogues: 

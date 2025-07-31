@@ -3,24 +3,25 @@
 # *
 # * IBM SPSS Products: Statistics Common
 # *
-# * (C) Copyright IBM Corp. 2015
+# * (C) Copyright IBM Corp. 2021
 # *
 # * US Government Users Restricted Rights - Use, duplication or disclosure
 # * restricted by GSA ADP Schedule Contract with IBM Corp. 
 # ************************************************************************/
 
 # author__ = "IBM SPSS, JKP"
-# version__ = "1.1.0"
+# version__ = "1.0.1"
 
 # History
 # 06-may-2015 Original Version
-# 30-may-2021 Add coefficient CIs to output
+# 31-oct-2021 fixes for strata
+# 13-jul-2025 add CI's to output and implement confidence intervals
 
 ### MAIN ROUTINE ###
 docomprisk = function(ftime, fstatus, cov1=NULL, cov2=NULL, tf="quad", 
     threshold=NULL, cengroup=NULL, failcode, cencode,
     maxiter=10, gtol=1e-06, missing="omit",
-    dataset=NULL, plotit=TRUE, ci=.95,
+    dataset=NULL, plotit=TRUE, confint=0.95,
     quantiles = c(.25, .50, .75)) {
     # Estimate competing risk model
 
@@ -102,16 +103,17 @@ docomprisk = function(ftime, fstatus, cov1=NULL, cov2=NULL, tf="quad",
         cov2dta = NULL
     }
 
-
-
+    nacode = ifelse(missing == "omit", na.omit, na.fail)
     args = list(ftime=dta[ftime], fstatus=dta[fstatus], failcode=failcode,
         cencode=cencode, na.action=nacode, gtol=gtol, maxiter=maxiter)
+    ###print(args)
     # crr seems to have hardwired these names.  Renaming is required
     # or crr fails :-(
     names(args$ftime) = "ftime"    
     names(args$fstatus) = "fstatus"
     if (!is.null(cengroup)) {
         args$cengroup = dta[cengroup]
+        names(args$cengroup) = "cengroup"
     }
     pargs = list()
     if (!is.null(cov1)) {
@@ -123,13 +125,13 @@ docomprisk = function(ftime, fstatus, cov1=NULL, cov2=NULL, tf="quad",
         pargs[["cov2"]] = cov2dta
         args[["tf"]] = tffunc
     }
-
+    ###print(args)
     res = tryCatch(do.call(crr, args),
         error = function(e) {
             warns$warn(e$message, dostop=TRUE)
         }
     )
-    if (plotit || dataset) {
+    if (plotit || !is.null(dataset)) {
         doquantile = function(x, q=quantiles) {
             return(quantile(x, q, na.rm=TRUE))
         }
@@ -154,7 +156,7 @@ docomprisk = function(ftime, fstatus, cov1=NULL, cov2=NULL, tf="quad",
         evalpts = NULL
     }
     # suspect that this will have the common can't find data problem :-(
-    displayresults(allargs, res, pred, evalpts, warns)
+    displayresults(allargs, res, pred, evalpts, confint, warns)
 
     if (!is.null(dataset)) {
         savepred(allargs, res, warns)
@@ -201,11 +203,12 @@ handlecatcovar = function(df) {
     return(data.frame(df[noncatcovar], catdf))
 }
 
-displayresults = function(allargs, res, pred, evalpts, warns) {
+displayresults = function(allargs, res, pred, evalpts, confint, warns) {
     # display results
     # allargs is the parameter set (estimation or prediction)
+    ###print(pred)
     
-    ressum = summary(res, conf.int=allargs$ci)
+    ressum = summary(res, conf.int=confint)
     tflabels = list(quad=gtxt("Quadratic"), threshold=gtxt("Threshold: %s"))
     if (!is.null(allargs$tf)) {
         tflabel = tflabels[[allargs$tf]]
@@ -246,8 +249,8 @@ displayresults = function(allargs, res, pred, evalpts, warns) {
             ifelse(allargs$missing == "omit", gtxt("omit"), gtxt("Stop")),
             ifelse(res$converged, gtxt("Yes"), gtxt("NO")),
             allargs$maxiter,
-            ressum$n,
-            allargs$nmissing,
+            ressum$n - ressum$n.missing,
+            ressum$n.missing,
             round(res$loglik, 5),
             round(ressum$logtest[[1]], 5),
             ressum$logtest[[2]],
@@ -258,14 +261,23 @@ displayresults = function(allargs, res, pred, evalpts, warns) {
         collabels=c(gtxt("Summary")), templateName="COMPRESKSUMMARY", outline=gtxt("Summary"),
         caption = gtxt("Computations done by R package cmprsk by Bob Gray")
     )
-    ci = ressum$conf.int[,c(3,4)]
-    coef = data.frame(ressum$coef, ci)
-    frac = (1. - allargs$ci)/2.
-    lowerci = sprintf("Exp %.3f CI", frac)
-    upperci = sprintf("Exp %.3f CI", allargs$ci + frac)
-    names(coef) = c(
-        gtxt("Coefficient"), gtxt("Exp"), gtxt("Std. Error"), gtxt("Z"), gtxt("Sig."), lowerci, upperci)
-    spsspivottable.Display(coef,
+    
+    sumres = summary(res, conf.int=confint)
+    coefs = data.frame(sumres$coef)
+    sumnames = names(sumres$conf.int)
+    cis = data.frame(sumres$conf.int)[3:4]
+    cin = names(cis)
+    cin1 = substr(cin[[1]], 2, nchar(cin[[1]]))
+    cin2 = substr(cin[[2]], 2, nchar(cin[[2]]))
+    ###save(sumres, coefs, sumnames, cis, cin, cin1, cin2, file="c:/comprisk/fromeh/summary.rdata")
+    names(cis) = list(paste(gtxt("CI"), cin1),
+        paste(gtxt("CI"), cin2)
+    )
+    names(coefs) = c(
+        gtxt("Coefficient"), gtxt("Exp"), gtxt("Std. Error"), gtxt("Z"), gtxt("Sig."))
+    coefs = cbind(coefs, cis)
+
+    spsspivottable.Display(coefs,
         title=gtxt("Coefficients"),
         rowdim=gtxt("Variable"), hiderowdimtitle=FALSE,
         templateName="COMPRESCOEF",
@@ -439,8 +451,6 @@ Run = function(args) {
         spsspkg.Template("FAILCODE", subc="", ktype="str", var="failcode"),
         spsspkg.Template("CENSORCODE", subc="", ktype="str", var="cencode"),
         
-        spsspkg.Template("CONFINT", subc="OPTIONS", ktype="float", var="ci",
-                vallist=list(.5, .999)),
         spsspkg.Template("MAXITER", subc="OPTIONS", ktype="int", var="maxiter"),
         spsspkg.Template("TOL", subc="OPTIONS", ktype="float", var="gtol",
             vallist=list(1e-10)),
@@ -449,6 +459,8 @@ Run = function(args) {
         spsspkg.Template("PLOT", subc="OPTIONS", ktype="bool", var="plotit"),
         spsspkg.Template("QUANTILES", subc="OPTIONS", ktype="float", var="quantiles", 
             islist=TRUE, vallist=list(0, 1)),
+        spsspkg.Template("CONFINT", subc="OPTIONS", ktype="float", var="confint",
+            vallist=list(0.0001, .9999)),
         
         spsspkg.Template("DATASET", subc="SAVE", ktype="varname", var="dataset")      
     ))

@@ -1,6 +1,6 @@
 Name: STATS COMPRISK
 Display-Name: Competing Risks Survival Regression
-Dialog-Specs: STATS_COMPRISK.spd
+Dialog-Specs: STATS_COMPRISK.spd,STATS_COMPRISK.cfe
 Command-Specs: STATS_COMPRISK.xml
 Code-Files: STATS_COMPRISK.R
 Misc-Files: extsyntax.css,IBMdialogicon.png,markdown.html
@@ -11,8 +11,8 @@ Description: This procedure estimates the   competing risks survival r
   conditions or multiple part failures in a mechanical or electrical d
  evice.
 Author: JKP, IBM SPSS
-Version: 1.1.1
-Product-Version: 18
+Version: 1.2.0
+Product-Version: 24
 Date: 5/6/2015
 Product-Version-Maximum: 99
 Categories: statistics, survival

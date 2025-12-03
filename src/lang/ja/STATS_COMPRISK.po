@@ -1,0 +1,244 @@
+# /***********************************************************************
+# * Licensed Materials - Property of IBM
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2025
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp.
+# ************************************************************************/
+
+msgid ""
+msgstr ""
+"Project-Id-Version: STATS_COMPRISK 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-14 17:10+0530\n"
+"PO-Revision-Date: 2025-11-14 17:10+0530\n"
+"Last-Translator: Your Name <your.email@example.com>\n"
+"Language-Team: ja <ja@example.com>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: STATS_COMPRISK.R:33
+msgid "Competing Risks Regression"
+msgstr "競合リスク回帰"
+
+#: STATS_COMPRISK.R:34
+msgid "Competing Risks Regression: Warnings"
+msgstr "競合リスク回帰: 警告"
+
+#: STATS_COMPRISK.R:39
+#, c-format
+msgid "The R %s package is required but could not be loaded."
+msgstr "R %s パッケージが必要ですが、読み込むことができませんでした。"
+
+#: STATS_COMPRISK.R:46
+msgid "The active dataset must have a name in order to use this procedure"
+msgstr "この手順を使用するためには、アクティブなデータセットに名前が必要です"
+
+#: STATS_COMPRISK.R:50
+msgid "The output dataset name must not already be in use"
+msgstr "出力データセット名は、まだ使用されていない名前にする必要があります"
+
+#: STATS_COMPRISK.R:56
+msgid "At least one fixed or time-varying covariate is required"
+msgstr "少なくとも 1 つの固定または時間変動の共変量が必要です。"
+
+#: STATS_COMPRISK.R:70
+#, c-format
+msgid "Stopping: there are %d missing cases and Stop was specified"
+msgstr "停止: %d 件の欠落があり、「停止」が指定されました"
+
+#: STATS_COMPRISK.R:88
+msgid "A time function is required if using time covariates"
+msgstr "時間共変量を使用する場合は、時間関数が必要です"
+
+#: STATS_COMPRISK.R:97
+msgid "A threshold value is required if the threshold time function is used"
+msgstr "しきい値時間関数を使用する場合は、しきい値が必要です"
+
+#: STATS_COMPRISK.R:212
+msgid "Quadratic"
+msgstr "2 次"
+
+#: STATS_COMPRISK.R:212
+#, c-format
+msgid "Threshold: %s"
+msgstr "しきい値: %s"
+
+#: STATS_COMPRISK.R:225
+msgid "Time Variable"
+msgstr "時刻変数"
+
+#: STATS_COMPRISK.R:226
+msgid "Status Variable"
+msgstr "状態変数"
+
+#: STATS_COMPRISK.R:227
+msgid "Time Function"
+msgstr "時間関数"
+
+#: STATS_COMPRISK.R:228
+msgid "Group Variable"
+msgstr "グループ化変数"
+
+#: STATS_COMPRISK.R:229
+msgid "Failure Code"
+msgstr "障害コード"
+
+#: STATS_COMPRISK.R:230
+msgid "Censoring Code"
+msgstr "調査対象コード"
+
+#: STATS_COMPRISK.R:231
+msgid "Missing Value Treatment"
+msgstr "欠損値の処理"
+
+#: STATS_COMPRISK.R:232
+msgid "Convergence"
+msgstr "収束基準"
+
+#: STATS_COMPRISK.R:233
+msgid "Maximum Number of Iterations"
+msgstr "最大反復回数"
+
+#: STATS_COMPRISK.R:234
+msgid "Number of Valid Cases"
+msgstr "有効ケース数"
+
+#: STATS_COMPRISK.R:235
+msgid "Number of Missing Cases"
+msgstr "欠損ケースの数"
+
+#: STATS_COMPRISK.R:236
+msgid "Pseudo Log Likelihood"
+msgstr "疑似対数尤度"
+
+#: STATS_COMPRISK.R:237
+msgid "Pseudo Likelihood Ratio Test"
+msgstr "疑似尤度比検定"
+
+#: STATS_COMPRISK.R:238
+msgid "Log Likelihood D. F."
+msgstr "対数尤度 D. F."
+
+#: STATS_COMPRISK.R:239
+msgid "Prediction Dataset"
+msgstr "予測データ・セット"
+
+#: STATS_COMPRISK.R:245 STATS_COMPRISK.R:246 STATS_COMPRISK.R:257
+msgid "--NA--"
+msgstr "--該当なし--"
+
+#: STATS_COMPRISK.R:249
+msgid "omit"
+msgstr "省略"
+
+#: STATS_COMPRISK.R:249
+msgid "Stop"
+msgstr "停止"
+
+#: STATS_COMPRISK.R:250
+msgid "Yes"
+msgstr "はい"
+
+#: STATS_COMPRISK.R:250
+msgid "NO"
+msgstr "いいえ"
+
+#: STATS_COMPRISK.R:260 STATS_COMPRISK.R:261
+msgid "Summary"
+msgstr "サマリー"
+
+#: STATS_COMPRISK.R:262
+msgid "Computations done by R package cmprsk by Bob Gray"
+msgstr "Bob Gray が作成した R パッケージ cmprsk によって完了した計算"
+
+#: STATS_COMPRISK.R:273 STATS_COMPRISK.R:274
+msgid "CI"
+msgstr "CI"
+
+#: STATS_COMPRISK.R:277
+msgid "Coefficient"
+msgstr "係数"
+
+#: STATS_COMPRISK.R:277
+msgid "Exp"
+msgstr "Exp"
+
+#: STATS_COMPRISK.R:277
+msgid "Std. Error"
+msgstr "標準偏差。 エラー"
+
+#: STATS_COMPRISK.R:277
+msgid "Z"
+msgstr "Z"
+
+#: STATS_COMPRISK.R:277
+msgid "Sig."
+msgstr "有意"
+
+#: STATS_COMPRISK.R:281 STATS_COMPRISK.R:284
+msgid "Coefficients"
+msgstr "係数"
+
+#: STATS_COMPRISK.R:282 STATS_COMPRISK.R:301
+msgid "Variable"
+msgstr "変数"
+
+#: STATS_COMPRISK.R:285
+#, c-format
+msgid "Failure code: %s"
+msgstr "故障コード: %s"
+
+#: STATS_COMPRISK.R:288
+msgid "Subdistribution Functions"
+msgstr "小区間分布関数"
+
+#: STATS_COMPRISK.R:288
+msgid "Time"
+msgstr "時刻"
+
+#: STATS_COMPRISK.R:292
+msgid "solid"
+msgstr "実線"
+
+#: STATS_COMPRISK.R:292
+msgid "dashed"
+msgstr "破線"
+
+#: STATS_COMPRISK.R:292
+msgid "dotted"
+msgstr "点線"
+
+#: STATS_COMPRISK.R:292
+msgid "dot dash"
+msgstr "点線"
+
+#: STATS_COMPRISK.R:293
+msgid "long dash"
+msgstr "長いダッシュ"
+
+#: STATS_COMPRISK.R:293
+msgid "two dash"
+msgstr "2ダッシュ"
+
+#: STATS_COMPRISK.R:300 STATS_COMPRISK.R:304
+msgid "Covariate Evaluation Points"
+msgstr "共変量評価ポイント"
+
+#: STATS_COMPRISK.R:302
+msgid "Quantile"
+msgstr "4 分位"
+
+#: STATS_COMPRISK.R:354
+msgid "End of procedure"
+msgstr "手順の終わり"
+
+#: STATS_COMPRISK.R:381
+msgid "Message Number"
+msgstr "メッセージ番号"

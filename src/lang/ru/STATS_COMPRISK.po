@@ -1,0 +1,243 @@
+# /***********************************************************************
+# * Licensed Materials - Property of IBM
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2025
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp.
+# ************************************************************************/
+
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-31 15:17+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: STATS_COMPRISK.R:33
+msgid "Competing Risks Regression"
+msgstr ""
+
+#: STATS_COMPRISK.R:34
+msgid "Competing Risks Regression: Warnings"
+msgstr ""
+
+#: STATS_COMPRISK.R:39
+#, c-format
+msgid "The R %s package is required but could not be loaded."
+msgstr ""
+
+#: STATS_COMPRISK.R:46
+msgid "The active dataset must have a name in order to use this procedure"
+msgstr ""
+
+#: STATS_COMPRISK.R:50
+msgid "The output dataset name must not already be in use"
+msgstr ""
+
+#: STATS_COMPRISK.R:56
+msgid "At least one fixed or time-varying covariate is required"
+msgstr ""
+
+#: STATS_COMPRISK.R:70
+#, c-format
+msgid "Stopping: there are %d missing cases and Stop was specified"
+msgstr ""
+
+#: STATS_COMPRISK.R:88
+msgid "A time function is required if using time covariates"
+msgstr ""
+
+#: STATS_COMPRISK.R:97
+msgid "A threshold value is required if the threshold time function is used"
+msgstr ""
+
+#: STATS_COMPRISK.R:212
+msgid "Quadratic"
+msgstr ""
+
+#: STATS_COMPRISK.R:212
+#, c-format
+msgid "Threshold: %s"
+msgstr ""
+
+#: STATS_COMPRISK.R:225
+msgid "Time Variable"
+msgstr ""
+
+#: STATS_COMPRISK.R:226
+msgid "Status Variable"
+msgstr ""
+
+#: STATS_COMPRISK.R:227
+msgid "Time Function"
+msgstr ""
+
+#: STATS_COMPRISK.R:228
+msgid "Group Variable"
+msgstr ""
+
+#: STATS_COMPRISK.R:229
+msgid "Failure Code"
+msgstr ""
+
+#: STATS_COMPRISK.R:230
+msgid "Censoring Code"
+msgstr ""
+
+#: STATS_COMPRISK.R:231
+msgid "Missing Value Treatment"
+msgstr ""
+
+#: STATS_COMPRISK.R:232
+msgid "Convergence"
+msgstr ""
+
+#: STATS_COMPRISK.R:233
+msgid "Maximum Number of Iterations"
+msgstr ""
+
+#: STATS_COMPRISK.R:234
+msgid "Number of Valid Cases"
+msgstr ""
+
+#: STATS_COMPRISK.R:235
+msgid "Number of Missing Cases"
+msgstr ""
+
+#: STATS_COMPRISK.R:236
+msgid "Pseudo Log Likelihood"
+msgstr ""
+
+#: STATS_COMPRISK.R:237
+msgid "Pseudo Likelihood Ratio Test"
+msgstr ""
+
+#: STATS_COMPRISK.R:238
+msgid "Log Likelihood D. F."
+msgstr ""
+
+#: STATS_COMPRISK.R:239
+msgid "Prediction Dataset"
+msgstr ""
+
+#: STATS_COMPRISK.R:245 STATS_COMPRISK.R:246 STATS_COMPRISK.R:257
+msgid "--NA--"
+msgstr ""
+
+#: STATS_COMPRISK.R:249
+msgid "omit"
+msgstr ""
+
+#: STATS_COMPRISK.R:249
+msgid "Stop"
+msgstr ""
+
+#: STATS_COMPRISK.R:250
+msgid "Yes"
+msgstr ""
+
+#: STATS_COMPRISK.R:250
+msgid "NO"
+msgstr ""
+
+#: STATS_COMPRISK.R:260 STATS_COMPRISK.R:261
+msgid "Summary"
+msgstr ""
+
+#: STATS_COMPRISK.R:262
+msgid "Computations done by R package cmprsk by Bob Gray"
+msgstr ""
+
+#: STATS_COMPRISK.R:273 STATS_COMPRISK.R:274
+msgid "CI"
+msgstr ""
+
+#: STATS_COMPRISK.R:277
+msgid "Coefficient"
+msgstr ""
+
+#: STATS_COMPRISK.R:277
+msgid "Exp"
+msgstr ""
+
+#: STATS_COMPRISK.R:277
+msgid "Std. Error"
+msgstr ""
+
+#: STATS_COMPRISK.R:277
+msgid "Z"
+msgstr ""
+
+#: STATS_COMPRISK.R:277
+msgid "Sig."
+msgstr ""
+
+#: STATS_COMPRISK.R:281 STATS_COMPRISK.R:284
+msgid "Coefficients"
+msgstr ""
+
+#: STATS_COMPRISK.R:282 STATS_COMPRISK.R:301
+msgid "Variable"
+msgstr ""
+
+#: STATS_COMPRISK.R:285
+#, c-format
+msgid "Failure code: %s"
+msgstr ""
+
+#: STATS_COMPRISK.R:288
+msgid "Subdistribution Functions"
+msgstr ""
+
+#: STATS_COMPRISK.R:288
+msgid "Time"
+msgstr ""
+
+#: STATS_COMPRISK.R:292
+msgid "solid"
+msgstr ""
+
+#: STATS_COMPRISK.R:292
+msgid "dashed"
+msgstr ""
+
+#: STATS_COMPRISK.R:292
+msgid "dotted"
+msgstr ""
+
+#: STATS_COMPRISK.R:292
+msgid "dot dash"
+msgstr ""
+
+#: STATS_COMPRISK.R:293
+msgid "long dash"
+msgstr ""
+
+#: STATS_COMPRISK.R:293
+msgid "two dash"
+msgstr ""
+
+#: STATS_COMPRISK.R:300 STATS_COMPRISK.R:304
+msgid "Covariate Evaluation Points"
+msgstr ""
+
+#: STATS_COMPRISK.R:302
+msgid "Quantile"
+msgstr ""
+
+#: STATS_COMPRISK.R:354
+msgid "End of procedure"
+msgstr ""
+
+#: STATS_COMPRISK.R:381
+msgid "Message Number"
+msgstr ""

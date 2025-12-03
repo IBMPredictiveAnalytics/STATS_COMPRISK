@@ -1,0 +1,244 @@
+# /***********************************************************************
+# * Licensed Materials - Property of IBM
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2025
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp.
+# ************************************************************************/
+
+msgid ""
+msgstr ""
+"Project-Id-Version: STATS_COMPRISK 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-14 17:10+0530\n"
+"PO-Revision-Date: 2025-11-14 17:10+0530\n"
+"Last-Translator: Your Name <your.email@example.com>\n"
+"Language-Team: ko <ko@example.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: STATS_COMPRISK.R:33
+msgid "Competing Risks Regression"
+msgstr "경쟁 위험 회귀분석"
+
+#: STATS_COMPRISK.R:34
+msgid "Competing Risks Regression: Warnings"
+msgstr "경쟁 위험 회귀분석: 경고"
+
+#: STATS_COMPRISK.R:39
+#, c-format
+msgid "The R %s package is required but could not be loaded."
+msgstr "R %s 패키지가 필요하지만 로드할 수 없습니다."
+
+#: STATS_COMPRISK.R:46
+msgid "The active dataset must have a name in order to use this procedure"
+msgstr "이 프로시저를 사용하려면 활성 데이터 세트의 이름이 있어야 합니다."
+
+#: STATS_COMPRISK.R:50
+msgid "The output dataset name must not already be in use"
+msgstr "출력 데이터 세트 이름은 아직 사용 중이지 않은 것이어야 합니다."
+
+#: STATS_COMPRISK.R:56
+msgid "At least one fixed or time-varying covariate is required"
+msgstr "고정 공변량 또는 시변 공변량이 적어도 한 개 필요합니다."
+
+#: STATS_COMPRISK.R:70
+#, c-format
+msgid "Stopping: there are %d missing cases and Stop was specified"
+msgstr "중지 중: %d개의 누락된 케이스가 있으며 중지가 지정됨"
+
+#: STATS_COMPRISK.R:88
+msgid "A time function is required if using time covariates"
+msgstr "시간 공변량을 사용하는 경우 시간 함수가 필요합니다."
+
+#: STATS_COMPRISK.R:97
+msgid "A threshold value is required if the threshold time function is used"
+msgstr "임계값 시간 함수를 사용하는 경우 임계값이 필요합니다."
+
+#: STATS_COMPRISK.R:212
+msgid "Quadratic"
+msgstr "2차"
+
+#: STATS_COMPRISK.R:212
+#, c-format
+msgid "Threshold: %s"
+msgstr "임계값: %s"
+
+#: STATS_COMPRISK.R:225
+msgid "Time Variable"
+msgstr "시간 변수"
+
+#: STATS_COMPRISK.R:226
+msgid "Status Variable"
+msgstr "상태 변수"
+
+#: STATS_COMPRISK.R:227
+msgid "Time Function"
+msgstr "시간 함수"
+
+#: STATS_COMPRISK.R:228
+msgid "Group Variable"
+msgstr "그룹 변수"
+
+#: STATS_COMPRISK.R:229
+msgid "Failure Code"
+msgstr "실패 코드"
+
+#: STATS_COMPRISK.R:230
+msgid "Censoring Code"
+msgstr "중도절단 코드"
+
+#: STATS_COMPRISK.R:231
+msgid "Missing Value Treatment"
+msgstr "결측값 처리"
+
+#: STATS_COMPRISK.R:232
+msgid "Convergence"
+msgstr "수렴"
+
+#: STATS_COMPRISK.R:233
+msgid "Maximum Number of Iterations"
+msgstr "최대반복수"
+
+#: STATS_COMPRISK.R:234
+msgid "Number of Valid Cases"
+msgstr "유효 케이스 수"
+
+#: STATS_COMPRISK.R:235
+msgid "Number of Missing Cases"
+msgstr "결측 케이스 수"
+
+#: STATS_COMPRISK.R:236
+msgid "Pseudo Log Likelihood"
+msgstr "유사 로그 우도"
+
+#: STATS_COMPRISK.R:237
+msgid "Pseudo Likelihood Ratio Test"
+msgstr "유사 우도비 검정"
+
+#: STATS_COMPRISK.R:238
+msgid "Log Likelihood D. F."
+msgstr "로그 우도 D. F."
+
+#: STATS_COMPRISK.R:239
+msgid "Prediction Dataset"
+msgstr "예측 데이터 세트"
+
+#: STATS_COMPRISK.R:245 STATS_COMPRISK.R:246 STATS_COMPRISK.R:257
+msgid "--NA--"
+msgstr "--NA--"
+
+#: STATS_COMPRISK.R:249
+msgid "omit"
+msgstr "생략"
+
+#: STATS_COMPRISK.R:249
+msgid "Stop"
+msgstr "중지"
+
+#: STATS_COMPRISK.R:250
+msgid "Yes"
+msgstr "예"
+
+#: STATS_COMPRISK.R:250
+msgid "NO"
+msgstr "아니오"
+
+#: STATS_COMPRISK.R:260 STATS_COMPRISK.R:261
+msgid "Summary"
+msgstr "요약(M)"
+
+#: STATS_COMPRISK.R:262
+msgid "Computations done by R package cmprsk by Bob Gray"
+msgstr "Bob Gray가 작성한 R cmprsk 패키지를 통해 계산이 수행됨"
+
+#: STATS_COMPRISK.R:273 STATS_COMPRISK.R:274
+msgid "CI"
+msgstr "CI"
+
+#: STATS_COMPRISK.R:277
+msgid "Coefficient"
+msgstr "계수"
+
+#: STATS_COMPRISK.R:277
+msgid "Exp"
+msgstr "Exp"
+
+#: STATS_COMPRISK.R:277
+msgid "Std. Error"
+msgstr "표준 오류"
+
+#: STATS_COMPRISK.R:277
+msgid "Z"
+msgstr "Z"
+
+#: STATS_COMPRISK.R:277
+msgid "Sig."
+msgstr "제거에 대한"
+
+#: STATS_COMPRISK.R:281 STATS_COMPRISK.R:284
+msgid "Coefficients"
+msgstr "계수"
+
+#: STATS_COMPRISK.R:282 STATS_COMPRISK.R:301
+msgid "Variable"
+msgstr "가변"
+
+#: STATS_COMPRISK.R:285
+#, c-format
+msgid "Failure code: %s"
+msgstr "실패 코드: %s"
+
+#: STATS_COMPRISK.R:288
+msgid "Subdistribution Functions"
+msgstr "하위 분포 함수"
+
+#: STATS_COMPRISK.R:288
+msgid "Time"
+msgstr "시간"
+
+#: STATS_COMPRISK.R:292
+msgid "solid"
+msgstr "단선"
+
+#: STATS_COMPRISK.R:292
+msgid "dashed"
+msgstr "파선"
+
+#: STATS_COMPRISK.R:292
+msgid "dotted"
+msgstr "점선"
+
+#: STATS_COMPRISK.R:292
+msgid "dot dash"
+msgstr "점선 파선"
+
+#: STATS_COMPRISK.R:293
+msgid "long dash"
+msgstr "긴 대시"
+
+#: STATS_COMPRISK.R:293
+msgid "two dash"
+msgstr "대시 2개"
+
+#: STATS_COMPRISK.R:300 STATS_COMPRISK.R:304
+msgid "Covariate Evaluation Points"
+msgstr "공변량 평가 포인트"
+
+#: STATS_COMPRISK.R:302
+msgid "Quantile"
+msgstr "4분위수"
+
+#: STATS_COMPRISK.R:354
+msgid "End of procedure"
+msgstr "프로시저 끝"
+
+#: STATS_COMPRISK.R:381
+msgid "Message Number"
+msgstr "메시지 번호"

@@ -1,0 +1,244 @@
+# /***********************************************************************
+# * Licensed Materials - Property of IBM
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2025
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp.
+# ************************************************************************/
+
+msgid ""
+msgstr ""
+"Project-Id-Version: STATS_COMPRISK 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-14 17:10+0530\n"
+"PO-Revision-Date: 2025-11-14 17:10+0530\n"
+"Last-Translator: Your Name <your.email@example.com>\n"
+"Language-Team: zh_TW <zh_TW@example.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: STATS_COMPRISK.R:33
+msgid "Competing Risks Regression"
+msgstr "競爭風險迴歸"
+
+#: STATS_COMPRISK.R:34
+msgid "Competing Risks Regression: Warnings"
+msgstr "競爭風險迴歸：警告"
+
+#: STATS_COMPRISK.R:39
+#, c-format
+msgid "The R %s package is required but could not be loaded."
+msgstr "R %s 套件是必要套件，但無法載入。"
+
+#: STATS_COMPRISK.R:46
+msgid "The active dataset must have a name in order to use this procedure"
+msgstr "作用中資料集必須具有名稱，以使用此程序"
+
+#: STATS_COMPRISK.R:50
+msgid "The output dataset name must not already be in use"
+msgstr "輸出資料集名稱不得已使用"
+
+#: STATS_COMPRISK.R:56
+msgid "At least one fixed or time-varying covariate is required"
+msgstr "至少需要一個固定或時間變化共變數"
+
+#: STATS_COMPRISK.R:70
+#, c-format
+msgid "Stopping: there are %d missing cases and Stop was specified"
+msgstr "正在停止：有 %d 個案例遺失且已指定停止"
+
+#: STATS_COMPRISK.R:88
+msgid "A time function is required if using time covariates"
+msgstr "如果使用時間共變數，則需要時間函數"
+
+#: STATS_COMPRISK.R:97
+msgid "A threshold value is required if the threshold time function is used"
+msgstr "如果使用臨界值時間函數，則需要臨界值"
+
+#: STATS_COMPRISK.R:212
+msgid "Quadratic"
+msgstr "二次"
+
+#: STATS_COMPRISK.R:212
+#, c-format
+msgid "Threshold: %s"
+msgstr "臨界值：%s"
+
+#: STATS_COMPRISK.R:225
+msgid "Time Variable"
+msgstr "時間變數"
+
+#: STATS_COMPRISK.R:226
+msgid "Status Variable"
+msgstr "狀態變數"
+
+#: STATS_COMPRISK.R:227
+msgid "Time Function"
+msgstr "時間函數"
+
+#: STATS_COMPRISK.R:228
+msgid "Group Variable"
+msgstr "群組變數"
+
+#: STATS_COMPRISK.R:229
+msgid "Failure Code"
+msgstr "故障碼"
+
+#: STATS_COMPRISK.R:230
+msgid "Censoring Code"
+msgstr "設限碼"
+
+#: STATS_COMPRISK.R:231
+msgid "Missing Value Treatment"
+msgstr "遺漏值處理"
+
+#: STATS_COMPRISK.R:232
+msgid "Convergence"
+msgstr "收斂"
+
+#: STATS_COMPRISK.R:233
+msgid "Maximum Number of Iterations"
+msgstr "疊代數目上限"
+
+#: STATS_COMPRISK.R:234
+msgid "Number of Valid Cases"
+msgstr "有效觀察值數目"
+
+#: STATS_COMPRISK.R:235
+msgid "Number of Missing Cases"
+msgstr "遺漏觀察值數"
+
+#: STATS_COMPRISK.R:236
+msgid "Pseudo Log Likelihood"
+msgstr "虛擬對數概似值"
+
+#: STATS_COMPRISK.R:237
+msgid "Pseudo Likelihood Ratio Test"
+msgstr "虛擬概似比檢定"
+
+#: STATS_COMPRISK.R:238
+msgid "Log Likelihood D. F."
+msgstr "對數概似自由度"
+
+#: STATS_COMPRISK.R:239
+msgid "Prediction Dataset"
+msgstr "預測資料集"
+
+#: STATS_COMPRISK.R:245 STATS_COMPRISK.R:246 STATS_COMPRISK.R:257
+msgid "--NA--"
+msgstr "--不適用--"
+
+#: STATS_COMPRISK.R:249
+msgid "omit"
+msgstr "省略"
+
+#: STATS_COMPRISK.R:249
+msgid "Stop"
+msgstr "停止"
+
+#: STATS_COMPRISK.R:250
+msgid "Yes"
+msgstr "True"
+
+#: STATS_COMPRISK.R:250
+msgid "NO"
+msgstr "否"
+
+#: STATS_COMPRISK.R:260 STATS_COMPRISK.R:261
+msgid "Summary"
+msgstr "摘要"
+
+#: STATS_COMPRISK.R:262
+msgid "Computations done by R package cmprsk by Bob Gray"
+msgstr "計算由 Bob Gray 的 R 套件 cmprsk 完成"
+
+#: STATS_COMPRISK.R:273 STATS_COMPRISK.R:274
+msgid "CI"
+msgstr "CI"
+
+#: STATS_COMPRISK.R:277
+msgid "Coefficient"
+msgstr "係數"
+
+#: STATS_COMPRISK.R:277
+msgid "Exp"
+msgstr "Exp"
+
+#: STATS_COMPRISK.R:277
+msgid "Std. Error"
+msgstr "標準 錯誤"
+
+#: STATS_COMPRISK.R:277
+msgid "Z"
+msgstr "Z"
+
+#: STATS_COMPRISK.R:277
+msgid "Sig."
+msgstr "顯著性"
+
+#: STATS_COMPRISK.R:281 STATS_COMPRISK.R:284
+msgid "Coefficients"
+msgstr "係數"
+
+#: STATS_COMPRISK.R:282 STATS_COMPRISK.R:301
+msgid "Variable"
+msgstr "變數"
+
+#: STATS_COMPRISK.R:285
+#, c-format
+msgid "Failure code: %s"
+msgstr "失敗碼：%s"
+
+#: STATS_COMPRISK.R:288
+msgid "Subdistribution Functions"
+msgstr "子分佈函數"
+
+#: STATS_COMPRISK.R:288
+msgid "Time"
+msgstr "時間"
+
+#: STATS_COMPRISK.R:292
+msgid "solid"
+msgstr "實線"
+
+#: STATS_COMPRISK.R:292
+msgid "dashed"
+msgstr "虛線"
+
+#: STATS_COMPRISK.R:292
+msgid "dotted"
+msgstr "點線"
+
+#: STATS_COMPRISK.R:292
+msgid "dot dash"
+msgstr "點虛線"
+
+#: STATS_COMPRISK.R:293
+msgid "long dash"
+msgstr "長虛線"
+
+#: STATS_COMPRISK.R:293
+msgid "two dash"
+msgstr "兩條虛線"
+
+#: STATS_COMPRISK.R:300 STATS_COMPRISK.R:304
+msgid "Covariate Evaluation Points"
+msgstr "共變數評估點數"
+
+#: STATS_COMPRISK.R:302
+msgid "Quantile"
+msgstr "分位數"
+
+#: STATS_COMPRISK.R:354
+msgid "End of procedure"
+msgstr "程序的結尾"
+
+#: STATS_COMPRISK.R:381
+msgid "Message Number"
+msgstr "訊息號碼"

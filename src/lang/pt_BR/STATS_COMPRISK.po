@@ -1,0 +1,247 @@
+# /***********************************************************************
+# * Licensed Materials - Property of IBM
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2025
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp.
+# ************************************************************************/
+
+msgid ""
+msgstr ""
+"Project-Id-Version: STATS_COMPRISK 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-14 17:10+0530\n"
+"PO-Revision-Date: 2025-11-14 17:10+0530\n"
+"Last-Translator: Your Name <your.email@example.com>\n"
+"Language-Team: pt_BR <pt_BR@example.com>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: STATS_COMPRISK.R:33
+msgid "Competing Risks Regression"
+msgstr "Regressão de riscos concorrentes"
+
+#: STATS_COMPRISK.R:34
+msgid "Competing Risks Regression: Warnings"
+msgstr "Regressão de riscos de competição: Avisos"
+
+#: STATS_COMPRISK.R:39
+#, c-format
+msgid "The R %s package is required but could not be loaded."
+msgstr "O pacote R %s é necessário, mas não pôde ser carregado."
+
+#: STATS_COMPRISK.R:46
+msgid "The active dataset must have a name in order to use this procedure"
+msgstr ""
+"O conjunto de dados ativo deve ter um nome para utilizar este procedimento"
+
+#: STATS_COMPRISK.R:50
+msgid "The output dataset name must not already be in use"
+msgstr "O nome do conjunto de dados de saída não pode já estar em uso"
+
+#: STATS_COMPRISK.R:56
+msgid "At least one fixed or time-varying covariate is required"
+msgstr "Pelo menos uma covariável fixa ou de variação de tempo é necessária"
+
+#: STATS_COMPRISK.R:70
+#, c-format
+msgid "Stopping: there are %d missing cases and Stop was specified"
+msgstr "Interrupção: há %d casos ausentes e \"parar\" foi especificado"
+
+#: STATS_COMPRISK.R:88
+msgid "A time function is required if using time covariates"
+msgstr ""
+"Uma função de tempo será necessária se estiver usando covariáveis de tempo"
+
+#: STATS_COMPRISK.R:97
+msgid "A threshold value is required if the threshold time function is used"
+msgstr ""
+"Um valor do limite será necessário se a função de tempo de limite for usada"
+
+#: STATS_COMPRISK.R:212
+msgid "Quadratic"
+msgstr "Quadrático"
+
+#: STATS_COMPRISK.R:212
+#, c-format
+msgid "Threshold: %s"
+msgstr "Limite: %s"
+
+#: STATS_COMPRISK.R:225
+msgid "Time Variable"
+msgstr "Variável de tempo"
+
+#: STATS_COMPRISK.R:226
+msgid "Status Variable"
+msgstr "Variável de status"
+
+#: STATS_COMPRISK.R:227
+msgid "Time Function"
+msgstr "Função de tempo"
+
+#: STATS_COMPRISK.R:228
+msgid "Group Variable"
+msgstr "Variável de grupo"
+
+#: STATS_COMPRISK.R:229
+msgid "Failure Code"
+msgstr "Código de falha"
+
+#: STATS_COMPRISK.R:230
+msgid "Censoring Code"
+msgstr "Código de censura"
+
+#: STATS_COMPRISK.R:231
+msgid "Missing Value Treatment"
+msgstr "Tratamento de valor omisso"
+
+#: STATS_COMPRISK.R:232
+msgid "Convergence"
+msgstr "Convergência"
+
+#: STATS_COMPRISK.R:233
+msgid "Maximum Number of Iterations"
+msgstr "Número máximo de iterações"
+
+#: STATS_COMPRISK.R:234
+msgid "Number of Valid Cases"
+msgstr "Número de casos válidos"
+
+#: STATS_COMPRISK.R:235
+msgid "Number of Missing Cases"
+msgstr "Número de casos omissos"
+
+#: STATS_COMPRISK.R:236
+msgid "Pseudo Log Likelihood"
+msgstr "Pseudolog da verossimilhança"
+
+#: STATS_COMPRISK.R:237
+msgid "Pseudo Likelihood Ratio Test"
+msgstr "Teste de pseudorrazão de verossimilhança"
+
+#: STATS_COMPRISK.R:238
+msgid "Log Likelihood D. F."
+msgstr "Probabilidade de Log D. F."
+
+#: STATS_COMPRISK.R:239
+msgid "Prediction Dataset"
+msgstr "Conjunto de dados de predição"
+
+#: STATS_COMPRISK.R:245 STATS_COMPRISK.R:246 STATS_COMPRISK.R:257
+msgid "--NA--"
+msgstr "--NA--"
+
+#: STATS_COMPRISK.R:249
+msgid "omit"
+msgstr "omit"
+
+#: STATS_COMPRISK.R:249
+msgid "Stop"
+msgstr "Parar"
+
+#: STATS_COMPRISK.R:250
+msgid "Yes"
+msgstr "True"
+
+#: STATS_COMPRISK.R:250
+msgid "NO"
+msgstr "NO"
+
+#: STATS_COMPRISK.R:260 STATS_COMPRISK.R:261
+msgid "Summary"
+msgstr "Resumo"
+
+#: STATS_COMPRISK.R:262
+msgid "Computations done by R package cmprsk by Bob Gray"
+msgstr "Cálculos feitos pelo pacote R cmprsk por Bob Gray"
+
+#: STATS_COMPRISK.R:273 STATS_COMPRISK.R:274
+msgid "CI"
+msgstr "IC"
+
+#: STATS_COMPRISK.R:277
+msgid "Coefficient"
+msgstr "Coeficiente"
+
+#: STATS_COMPRISK.R:277
+msgid "Exp"
+msgstr "Exp"
+
+#: STATS_COMPRISK.R:277
+msgid "Std. Error"
+msgstr "Erro Erro"
+
+#: STATS_COMPRISK.R:277
+msgid "Z"
+msgstr "Z"
+
+#: STATS_COMPRISK.R:277
+msgid "Sig."
+msgstr "Sig."
+
+#: STATS_COMPRISK.R:281 STATS_COMPRISK.R:284
+msgid "Coefficients"
+msgstr "Coeficientes"
+
+#: STATS_COMPRISK.R:282 STATS_COMPRISK.R:301
+msgid "Variable"
+msgstr "Variável"
+
+#: STATS_COMPRISK.R:285
+#, c-format
+msgid "Failure code: %s"
+msgstr "Código de falha: %s"
+
+#: STATS_COMPRISK.R:288
+msgid "Subdistribution Functions"
+msgstr "Funções de subdistribuição"
+
+#: STATS_COMPRISK.R:288
+msgid "Time"
+msgstr "Hora"
+
+#: STATS_COMPRISK.R:292
+msgid "solid"
+msgstr "sólido"
+
+#: STATS_COMPRISK.R:292
+msgid "dashed"
+msgstr "tracejado"
+
+#: STATS_COMPRISK.R:292
+msgid "dotted"
+msgstr "pontilhado"
+
+#: STATS_COMPRISK.R:292
+msgid "dot dash"
+msgstr "ponto-traço"
+
+#: STATS_COMPRISK.R:293
+msgid "long dash"
+msgstr "traço longo"
+
+#: STATS_COMPRISK.R:293
+msgid "two dash"
+msgstr "dois traços"
+
+#: STATS_COMPRISK.R:300 STATS_COMPRISK.R:304
+msgid "Covariate Evaluation Points"
+msgstr "Pontos de avaliação de covariável"
+
+#: STATS_COMPRISK.R:302
+msgid "Quantile"
+msgstr "Quantil"
+
+#: STATS_COMPRISK.R:354
+msgid "End of procedure"
+msgstr "Fim do procedimento"
+
+#: STATS_COMPRISK.R:381
+msgid "Message Number"
+msgstr "Número da mensagem"
